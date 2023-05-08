@@ -2,14 +2,22 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   width: 500px;
-  margin: 50px auto;
+  margin: 20px auto;
+  padding: 20px;
 
   display: flex;
   flex-direction: column;
-  justifycontent: center;
-  alignitems: center;
 
-  gap: 50px;
-  fontsize: 40;
-  color: #010101;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 0px #000000bf;
+`;
+
+export const Title = styled.h1`
+  margin: 0 auto 20px;
+
+  font-size: 40px;
+`;
+
+export const Subtitle = styled.h1`
+  margin: 10px auto;
 `;

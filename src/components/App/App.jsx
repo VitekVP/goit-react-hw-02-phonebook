@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { Container } from 'components/App/App.styled';
+import { Container, Title, Subtitle } from 'components/App/App.styled';
 
-import { Section } from 'components/Section/Section';
 import { Form } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
@@ -37,7 +36,7 @@ export class App extends Component {
     this.setState(prevState => ({ contacts: [...contacts, newContact] }));
   };
 
-  handleFilter = event => {
+  changeFilter = event => {
     const { name, value } = event.currentTarget;
     this.setState({ [name]: value });
   };
@@ -62,16 +61,14 @@ export class App extends Component {
 
     return (
       <Container>
-        <Section title="Phonebook">
-          <Form onSubmit={this.addContact} />
-        </Section>
-        <Section title="Contacts">
-          <Filter value={filter} onChange={this.handleFilter} />
-          <ContactList
-            contacts={visibleContact}
-            onDeleteContact={this.deleteContact}
-          />
-        </Section>
+        <Title>Phonebook</Title>
+        <Form onSubmit={this.addContact} />
+        <Subtitle>Contacts</Subtitle>
+        <Filter value={filter} onChange={this.changeFilter} />
+        <ContactList
+          contacts={visibleContact}
+          onDeleteContact={this.deleteContact}
+        />
       </Container>
     );
   }
