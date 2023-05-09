@@ -26,6 +26,7 @@ export class App extends Component {
 
     if (findName) {
       alert(`${name} is already in the contacts`);
+      return;
     }
 
     const newContact = {
